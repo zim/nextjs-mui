@@ -15,6 +15,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "/src/Link";
 import ResponsiveAppBar from "/components/navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Copyright from "../src/Copyright";
 
 const theme = createTheme();
 
@@ -46,6 +47,7 @@ export default function Layout({ children, home }) {
 
 			<section className={styles.footer}>
 				<p>Footer</p>
+				<Copyright />
 			</section>
 		</ThemeProvider>
 	);

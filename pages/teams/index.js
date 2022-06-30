@@ -49,58 +49,21 @@ export default function Teams({ allTeamsData }) {
 		<Layout>
 			<Container maxWidth="md">
 				<Box className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-					<h2 className={utilStyles.headingLg}>Teams</h2>
-					<ul className={utilStyles.list}>
-						{allTeamsData.clubs.map(({ id, name, country, image }) => (
-							<li className={utilStyles.listItem} key={id}>
-								<Link href={`/teams/${id}`}>
-									<a>{name}</a>
-								</Link>
-								<p className={utilStyles.lightText}>{country}</p>
-							</li>
-						))}
-					</ul>
 					<List
 						sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
 					>
 						{allTeamsData.clubs.map(({ id, name, country, image }) => (
-							<ListItem key={id}>
-								<ListItemAvatar>
-									<Avatar>
-										<img src={image} alt={name} />
-									</Avatar>
-								</ListItemAvatar>
-								<ListItemText primary={name} secondary={country} />
-							</ListItem>
+							<Link href={`/teams/${id}`} className={utilStyles.noDecoration}>
+								<ListItem key={id}>
+									<ListItemAvatar>
+										<Avatar>
+											<img src={image} alt={name} />
+										</Avatar>
+									</ListItemAvatar>
+									<ListItemText primary={name} secondary={country} />
+								</ListItem>
+							</Link>
 						))}
-					</List>
-					<List
-						sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-					>
-						<ListItem>
-							<ListItemAvatar>
-								<Avatar>
-									<ImageIcon />
-								</Avatar>
-							</ListItemAvatar>
-							<ListItemText primary="Photos" secondary="Jan 9, 2014" />
-						</ListItem>
-						<ListItem>
-							<ListItemAvatar>
-								<Avatar>
-									<WorkIcon />
-								</Avatar>
-							</ListItemAvatar>
-							<ListItemText primary="Work" secondary="Jan 7, 2014" />
-						</ListItem>
-						<ListItem>
-							<ListItemAvatar>
-								<Avatar>
-									<BeachAccessIcon />
-								</Avatar>
-							</ListItemAvatar>
-							<ListItemText primary="Vacation" secondary="July 20, 2014" />
-						</ListItem>
 					</List>
 				</Box>
 			</Container>

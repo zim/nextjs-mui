@@ -68,7 +68,7 @@ export const getStaticProps = async (context) => {
 
 export default function Team({ team }) {
 	console.log({ team });
-	const { name, country } = team[0];
+	const { name, country, image } = team[0];
 	console.log(name);
 	return (
 		<Layout>
@@ -87,7 +87,7 @@ export default function Team({ team }) {
 								// 16:9
 								width: "50px",
 							}}
-							image={`/images/teams/arsenal-50.png`}
+							image={image}
 							alt="random"
 						/>
 						<CardContent sx={{ flexGrow: 1 }}>

@@ -38,12 +38,6 @@ const Products = ({ data }) => {
 	return (
 		<Layout>
 			<Container sx={{ py: 8 }} maxWidth="md">
-				{/* End hero unit */}
-				<Box sx={{ my: 4 }} className={styles.productsPage}>
-					<Typography variant="h4" component="h1" gutterBottom>
-						Products
-					</Typography>
-				</Box>
 				<Grid container spacing={4}>
 					{data.map((product) => (
 						<Grid item key={product.id} xs={12} sm={6} md={4}>
