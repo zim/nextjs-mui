@@ -1,0 +1,125 @@
+{
+	"name": "Premier League 2015/16",
+	"clubs": [
+		{
+			"name": "Aston Villa FC",
+			"code": "AVL",
+			"country": "England",
+			"image": "/images/teams/villa-50.png"
+		},
+		{
+			"name": "West Ham United FC",
+			"code": "WHU",
+			"country": "England",
+			"image": "/images/teams/westham.png"
+		},
+		{
+			"name": "Stoke City FC",
+			"code": "STK",
+			"country": "England",
+			"image": "/images/teams/stoke-city.png"
+		},
+		{
+			"name": "Sunderland AFC",
+			"code": "SUN",
+			"country": "England",
+			"image": "/images/teams/sunderland.jpg"
+		},
+		{
+			"name": "Everton FC",
+			"code": "EVE",
+			"country": "England",
+			"image": "/images/teams/everton-50.png"
+		},
+		{
+			"name": "Tottenham Hotspur FC",
+			"code": "TOT",
+			"country": "England",
+			"image": "/images/teams/totenham.png"
+		},
+		{
+			"name": "Manchester City FC",
+			"code": "MCI",
+			"country": "England",
+			"image": "/images/teams/manc-50.png"
+		},
+		{
+			"name": "Chelsea FC",
+			"code": "CHE",
+			"country": "England",
+			"image": "/images/teams/chelsea-50.png"
+		},
+		{
+			"name": "West Bromwich Albion FC",
+			"code": "WBA",
+			"country": "England",
+			"image": "/images/teams/wba.png"
+		},
+		{
+			"name": "Liverpool FC",
+			"code": "LIV",
+			"country": "England",
+			"image": "/images/teams/liverpool.png"
+		},
+		{
+			"name": "Arsenal FC",
+			"code": "ARS",
+			"country": "England",
+			"image": "/images/teams/arsenal-50.png"
+		},
+		{
+			"name": "Manchester United FC",
+			"code": "MUN",
+			"country": "England",
+			"image": "/images/teams/manu-50.png"
+		},
+		{
+			"name": "Newcastle United FC",
+			"code": "NEW",
+			"country": "England",
+			"image": "/images/teams/newcastle.png"
+		},
+		{
+			"name": "Norwich City FC",
+			"code": "NOR",
+			"country": "England",
+			"image": "/images/teams/norwhich.png"
+		},
+		{
+			"name": "Watford FC",
+			"code": "WAT",
+			"country": "England",
+			"image": "/images/teams/watford.png"
+		},
+		{
+			"name": "Swansea City FC",
+			"code": "SWA",
+			"country": "Wales",
+			"image": "/images/teams/swansea.png"
+		},
+		{
+			"name": "Crystal Palace FC",
+			"code": "CRY",
+			"country": "England",
+			"image": "/images/teams/palace-50.png"
+		},
+		{
+			"name": "Leicester City FC",
+			"code": "LEI",
+			"country": "England",
+			"image": "/images/teams/leicester.png"
+		},
+		{
+			"name": "Southampton FC",
+			"code": "SOU",
+			"country": "England",
+			"image": "/images/teams/south-50.png"
+		},
+		{
+			"name": "AFC Bournemouth",
+			"code": "BOU",
+			"country": "England",
+			"image": "/images/teams/bournmouth.png"
+		}
+	]
+}
