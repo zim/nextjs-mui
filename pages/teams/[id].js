@@ -20,7 +20,7 @@ import utilStyles from "/styles/utils.module.css";
 // import { getSortedPostsData } from "/lib/posts";
 import { getTeamsData } from "/lib/teams";
 // import Link from "next/link";
-import Navbar from "/components/Navbar";
+// import Navbar from "/components/navbar";
 
 console.log("getTeamsData =======");
 console.log(getTeamsData());
