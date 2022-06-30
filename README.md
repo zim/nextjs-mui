@@ -34,4 +34,4 @@ More information [in the documentation](https://mui.com/material-ui/guides/routi
 
 <!-- #default-branch-switch -->
 
-Chexk out some amazing Material UI example projects. [templates](https://mui.com/material-ui/getting-started/templates/) section.
+Check out some amazing Material UI example projects. [templates](https://mui.com/material-ui/getting-started/templates/) section.
