@@ -59,3 +59,8 @@
   display: flex;
   width: 100%;
 }
+.flexit{
+  display:flex;
+  flex:1;
+  justify-content: space-around;
+}

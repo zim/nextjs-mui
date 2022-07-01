@@ -7,6 +7,11 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import clubImagesHelper from "../lib/clubImagesHelper";
+import Image from "next/image";
+import utilStyles from "../styles/utils.module.css";
+
+console.log(clubImagesHelper["AFC Bournemouth"]);
 
 const ControlledAccordions = (props) => {
 	console.log(props);
@@ -32,20 +37,45 @@ const ControlledAccordions = (props) => {
 					>
 						<Typography sx={{ width: "33%", flexShrink: 0 }}>{name}</Typography>
 						<Typography sx={{ color: "text.secondary" }}>
-							I am an accordion
+							{matches[0].date}
 						</Typography>
 					</AccordionSummary>
 					<AccordionDetails>
 						<List sx={{ width: "100%", bgcolor: "none" }}>
-							{matches.map(({ date, team1, team2, score }, i) => (
-								<ListItem>
-									<Typography>{date}</Typography>
-									<Typography>{team1}</Typography>
-									<Typography>{score.ft[0]}</Typography>
-									<Typography>{score.ft[1]}</Typography>
-									<Typography>{team1}</Typography>
-								</ListItem>
-							))}
+							{matches.map(({ date, team1, team2, score }, i) => {
+								console.log(clubImagesHelper[team1]);
+								return (
+									<ListItem>
+										<Image
+											src={clubImagesHelper[team1]}
+											width={40}
+											height={40}
+											alt="logo"
+										/>
+										<Typography sx={{ flex: 2, textAlign: "center" }}>
+											{team1}
+										</Typography>
+										<div className={utilStyles.flexit}>
+											<Typography variant="h4" component="h2">
+												{score.ft[0]}
+											</Typography>
+											<Typography variant="h4" component="h2">
+												{score.ft[1]}
+											</Typography>
+										</div>
+
+										<Typography sx={{ flex: 2, textAlign: "center" }}>
+											{team2}
+										</Typography>
+										<Image
+											src={clubImagesHelper[team2]}
+											width={40}
+											height={40}
+											alt="logo"
+										/>
+									</ListItem>
+								);
+							})}
 						</List>
 					</AccordionDetails>
 				</Accordion>
