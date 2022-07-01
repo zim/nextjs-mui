@@ -26,13 +26,14 @@ import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import Head from "next/head";
 import Layout from "/components/layout";
 import utilStyles from "/styles/utils.module.css";
+import removeFCFromName from "../../lib/utils/removeFCFromName";
 // import { getSortedPostsData } from "/lib/posts";
 import { getTeamsData } from "/lib/teams";
 import { getSeasonData } from "/lib/football";
 // import Link from "next/link";
 
-console.log("getTeamsData =======");
-console.log(getTeamsData());
+// console.log("getTeamsData =======");
+// console.log(getTeamsData());
 console.log("getSeasonData =======");
 console.log(getSeasonData());
 
@@ -63,14 +64,14 @@ export async function getStaticProps() {
 }
 
 export default function Teams({ allTeamsData, name, rounds }) {
-	// console.log("allPostsData");
-	// console.log(allPostsData);
-	console.log("allTeamsData");
-	console.log(allTeamsData);
-	console.log("name");
-	console.log(name);
-	console.log("rounds");
-	console.log(rounds);
+	// // console.log("allPostsData");
+	// // console.log(allPostsData);
+	// console.log("allTeamsData");
+	// console.log(allTeamsData);
+	// console.log("name");
+	// console.log(name);
+	// console.log("rounds");
+	// console.log(rounds);
 	return (
 		<Layout>
 			<Container maxWidth="md">
@@ -101,7 +102,7 @@ export default function Teams({ allTeamsData, name, rounds }) {
 															/>
 														</Avatar>
 													</ListItemAvatar>
-													<ListItemText primary={name} secondary={country} />
+													<ListItemText primary={removeFCFromName(name)} />
 												</ListItem>
 											</Link>
 										))}

@@ -22,8 +22,8 @@ import { getTeamsData } from "/lib/teams";
 // import Link from "next/link";
 // import Navbar from "/components/navbar";
 
-console.log("getTeamsData =======");
-console.log(getTeamsData());
+// console.log("getTeamsData =======");
+// console.log(getTeamsData());
 
 const theme = createTheme();
 
@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
 
 	const teamsData = getTeamsData();
 
-	console.log(teamsData);
+	// console.log(teamsData);
 
 	const paths = teamsData.clubs.map((team) => {
 		return {
@@ -50,14 +50,14 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
 	const id = context.params?.id;
-	console.log(id);
+	// console.log(id);
 
 	// const response = await fetch(`https://dummyjson.com/products/${id}`);
 	const teamsData = getTeamsData();
-	console.log(teamsData);
+	// console.log(teamsData);
 
 	const team = teamsData.clubs.filter((team) => team.id === id);
-	console.log(team);
+	// console.log(team);
 
 	return {
 		props: {
@@ -67,9 +67,9 @@ export const getStaticProps = async (context) => {
 };
 
 export default function Team({ team }) {
-	console.log({ team });
+	// console.log({ team });
 	const { name, country, image } = team[0];
-	console.log(name);
+	// console.log(name);
 	return (
 		<Layout>
 			<Container sx={{ py: 8 }} maxWidth="md">

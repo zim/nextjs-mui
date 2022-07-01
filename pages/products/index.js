@@ -37,14 +37,14 @@ export const getStaticProps = async () => {
 
 const Products = ({ data }) => {
 	const [Page, setPage] = useState(1);
-	console.log(data);
-	console.log(data.length);
+	// console.log(data);
+	// console.log(data.length);
 
-	console.log((Page - 1) * 10);
-	console.log((Page - 1) * 10 + 9);
+	// console.log((Page - 1) * 10);
+	// console.log((Page - 1) * 10 + 9);
 
 	const dataSlice = () => data.slice((Page - 1) * 10, (Page - 1) * 10 + 9);
-	console.log(dataSlice());
+	// console.log(dataSlice());
 
 	return (
 		<Layout>
@@ -95,7 +95,7 @@ const Products = ({ data }) => {
 							component={Button}
 							{...item}
 							onClick={() => {
-								console.log("clickkked", item.page);
+								// console.log("clickkked", item.page);
 								setPage(item.page);
 							}}
 						/>
