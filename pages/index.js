@@ -20,12 +20,10 @@ export default function Index() {
 			<Container maxWidth="sm">
 				<Box sx={{ my: 4 }}>
 					<Typography variant="h4" component="h1" gutterBottom>
-						Next.js example
+						Welcome to this Next.js example site developed by Jolyon Segal
 					</Typography>
-					<Link href="/about" color="secondary">
-						Go to the about page
-					</Link>
-					<ProTip />
+					<Typography>I am a front end developer</Typography>
+
 					<Copyright />
 				</Box>
 			</Container>

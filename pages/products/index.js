@@ -1,6 +1,8 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import Pagination from "@mui/material/Pagination";
+import PaginationItem from "@mui/material/PaginationItem";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -34,46 +36,77 @@ export const getStaticProps = async () => {
 };
 
 const Products = ({ data }) => {
+	const [Page, setPage] = useState(1);
 	console.log(data);
+	console.log(data.length);
+
+	console.log((Page - 1) * 10);
+	console.log((Page - 1) * 10 + 9);
+
+	const dataSlice = () => data.slice((Page - 1) * 10, (Page - 1) * 10 + 9);
+	console.log(dataSlice());
+
 	return (
 		<Layout>
 			<Container sx={{ py: 8 }} maxWidth="md">
 				<Grid container spacing={4}>
-					{data.map((product) => (
+					{dataSlice().map((product) => (
 						<Grid item key={product.id} xs={12} sm={6} md={4}>
-							<Card
-								sx={{
-									height: "100%",
-									display: "flex",
-									flexDirection: "column",
-								}}
+							<Link
+								href={`/products/${product.id}`}
+								className={styles.noDecoration}
 							>
-								<CardMedia
-									component="img"
-									sx={
-										{
+								<Card
+									sx={{
+										height: "100%",
+										display: "flex",
+										flexDirection: "column",
+									}}
+								>
+									<CardMedia
+										component="img"
+										sx={{
 											// 16:9
-										}
-									}
-									image={product.thumbnail}
-									alt="random"
-								/>
-								<CardContent sx={{ flexGrow: 1 }}>
-									<Typography gutterBottom variant="h5" component="h2">
-										{product.title}
-									</Typography>
-									<Typography>{product.category}</Typography>
-								</CardContent>
-								<CardActions>
-									<Button href={`/products/${product.id}`} size="small">
-										View
-									</Button>
-									<Button size="small">Edit</Button>
-								</CardActions>
-							</Card>
+											maxHeight: "138px",
+										}}
+										image={product.thumbnail}
+										alt="random"
+									/>
+									<CardContent sx={{ flexGrow: 1 }}>
+										<Typography gutterBottom variant="h5" component="h2">
+											{product.title}
+										</Typography>
+										<Typography>{product.category}</Typography>
+									</CardContent>
+									<CardActions>
+										<Button size="small">View</Button>
+									</CardActions>
+								</Card>
+							</Link>
 						</Grid>
 					))}
 				</Grid>
+				<Pagination
+					page={Page}
+					count={3}
+					shape="rounded"
+					renderItem={(item) => (
+						<PaginationItem
+							component={Button}
+							{...item}
+							onClick={() => {
+								console.log("clickkked", item.page);
+								setPage(item.page);
+							}}
+						/>
+					)}
+					sx={{
+						display: "flex",
+						width: "100%",
+						margin: "3rem 0",
+						justifyContent: "center",
+					}}
+				/>
 			</Container>
 		</Layout>
 	);

@@ -13,7 +13,7 @@ import Image from "next/image";
 import styles from "./layout.module.scss";
 import utilStyles from "../styles/utils.module.css";
 import Link from "/src/Link";
-import ResponsiveAppBar from "/components/navbar";
+import ResponsiveAppBar from "./navbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Copyright from "../src/Copyright";
 
