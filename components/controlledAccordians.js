@@ -31,7 +31,8 @@ const ControlledAccordions = (props) => {
 	const handleShowResults = (e) => () => {
 		console.log("const handleShowResults ====");
 		console.log(e);
-		setShowResults(true);
+		// setShowResults(true);
+		setShowResults(showResults ? false : true);
 	};
 
 	return (
@@ -54,17 +55,18 @@ const ControlledAccordions = (props) => {
 					</AccordionSummary>
 					<AccordionDetails>
 						<List sx={{ width: "100%", bgcolor: "none" }}>
-							<ListItem key={i} className={clsx(styles.result)}>
-								<Button
-									onClick={(e) => {
-										setShowResults(true);
-										handleShowResults();
-										console.log("clickkked", e.target);
-									}}
-								>
-									Show Results
-								</Button>
-							</ListItem>
+							<Button
+								onClick={(e) => {
+									setShowResults(showResults ? false : true);
+									{
+										/* setShowResults(showResults); */
+									}
+									console.log("clickkked", e.target);
+								}}
+							>
+								Show Results
+							</Button>
+
 							{matchesNew.map(({ date, team1, team2, score, result }, i) => {
 								{
 									/* console.log(result); */
