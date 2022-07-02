@@ -1,4 +1,5 @@
 import * as React from "react";
+import clsx from "clsx";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -9,13 +10,15 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import clubImagesHelper from "../lib/clubImagesHelper";
 import removeFCFromName from "../lib/utils/removeFCFromName";
+import dateFormat from "../lib/utils/dateFormat";
 import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
+import styles from "./controlledAccordian.module.scss";
 
 // console.log(clubImagesHelper["AFC Bournemouth"]);
 
 const ControlledAccordions = (props) => {
-	// console.log(props);
+	console.log(props);
 	const [expanded, setExpanded] = React.useState(false);
 	const { rounds } = props;
 
@@ -26,7 +29,7 @@ const ControlledAccordions = (props) => {
 
 	return (
 		<div>
-			{rounds.map(({ name, matches }, i) => (
+			{rounds.map(({ name, matches, matchesNew }, i) => (
 				<Accordion
 					expanded={expanded === `panel${i}`}
 					onChange={handleChange(`panel${i}`)}
@@ -39,15 +42,24 @@ const ControlledAccordions = (props) => {
 					>
 						<Typography sx={{ width: "33%", flexShrink: 0 }}>{name}</Typography>
 						<Typography sx={{ color: "text.secondary" }}>
-							{matches[0].date}
+							{dateFormat(matches[0].date)}
 						</Typography>
 					</AccordionSummary>
 					<AccordionDetails>
 						<List sx={{ width: "100%", bgcolor: "none" }}>
-							{matches.map(({ date, team1, team2, score }, i) => {
-								// console.log(clubImagesHelper[team1]);
+							{matchesNew.map(({ date, team1, team2, score, result }, i) => {
+								{
+									/* console.log(result); */
+								}
 								return (
-									<ListItem key={i}>
+									<ListItem
+										key={i}
+										className={clsx(
+											styles.result,
+											result === "H" && styles.home,
+											result === "A" && styles.away
+										)}
+									>
 										<Image
 											src={clubImagesHelper[team1]}
 											width={40}

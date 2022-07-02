@@ -116,6 +116,9 @@ export default function Teams({ allTeamsData, name, rounds }) {
 									className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}
 								>
 									<Typography variant="h4" component="h2" gutterBottom>
+										{name}
+									</Typography>
+									<Typography variant="h4" component="h2" gutterBottom>
 										Rounds
 									</Typography>
 

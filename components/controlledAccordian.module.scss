@@ -1,0 +1,13 @@
+.result {
+	background-color: grey;
+
+	&.home {
+		background-color: aqua;
+	}
+	&.away {
+		background-color: darkorange;
+	}
+	&.draw {
+		background-color: lightblue;
+	}
+}
